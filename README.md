@@ -4,6 +4,11 @@ This repository documents my open source contributions across various projects.
 
 ## Repositories
 
+### vLLM
+
+- **PR #47692** - Fixed `--data-parallel-start-rank 0` being silently treated as unset in engine configuration by replacing truthiness checks with explicit `is not None` comparisons, along with a regression test. Merged into main.
+- **Issue #47691** - Reported the bug, documenting how an explicit start rank of 0 prevented hybrid load-balancing mode from being inferred in multi-node data-parallel deployments.
+
 ### Odysseus
 
 - **PR #3350** - Reduced database over-fetching in session APIs by properly scoping queries and adding limits.
