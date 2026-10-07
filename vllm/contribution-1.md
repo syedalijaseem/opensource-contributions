@@ -231,8 +231,6 @@ With the corrected behavior, those presets caused the leader to infer hybrid loa
 
 ---
 
-## Learnings & Reflections
-
 ### Technical Skills Gained
 
 - Understanding distributed configuration derivation
@@ -253,17 +251,3 @@ After approval, the PR waited several weeks on CI failures unrelated to the chan
 ### What I'd Do Differently Next Time
 
 I would continue tracing configuration values through downstream consumers early in the investigation process to better understand the practical impact of configuration bugs before proposing a fix.
-
-I would also consider how external projects might depend on existing behavior, even when that behavior is a bug. The KServe case showed that a correct fix can still be a breaking change for downstream users, and I would flag behavior changes like this in the PR description so maintainers can note them in release notes.
-
----
-
-## Resources Used
-
-- [vLLM Issue #47691](https://github.com/vllm-project/vllm/issues/47691)
-- [vLLM Pull Request #47692](https://github.com/vllm-project/vllm/pull/47692)
-- [KServe Pull Request #6355](https://github.com/kserve/kserve/pull/6355)
-- `vllm/engine/arg_utils.py`
-- `tests/v1/engine/test_engine_args.py`
-- Hybrid data-parallel deployment documentation
-- Existing configuration handling patterns within vLLM
